@@ -18,6 +18,7 @@ export const useContestantsStore = defineStore(
         nImg: "",
         i: 0,
     }),
+    persist: true,
     getters:  { 
         results: (state) => {
             const contestants = state.contestants.slice();

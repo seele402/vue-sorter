@@ -1,5 +1,23 @@
 @import "..//assets/variables.scss";
 
+
+%btn{
+    border: 5px #0A0A0A;
+    text-align: center;
+    margin: 5px;
+    background-color:#212121;
+    color: $textclr;
+    padding: 10px;
+    width: 200px;
+    font-size: 13pt;
+}
+    %btnhover{
+      box-shadow: inset 400px 0 0 0 #434750;
+      cursor: pointer;
+      transition-duration: 300ms;
+    }
 *{
-    background-color: background-color
+    background-color: background-color;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: $textclr;
 }

@@ -29,14 +29,14 @@
 
         <!-- Блок с кнопками присуждения победы -->
         <div style="text-align: center">
-        <button @click=incrementLeft() class="btn">Left</button>
+        <button @click=incrementLeft() class="leftButton">Left</button>
 
-        <button @click=incrementRight() class="btn">Right</button>
+        <button @click=incrementRight() class="rightButton">Right</button>
         </div>
 
         <!-- Блок с кнопкой ничьи -->
-        <div class="drawBtn">
-        <button @click="draw(), currentPairIndex++" class="btn">Draw</button>
+        <div class="drawButtonContainer">
+        <button @click="draw(), currentPairIndex++" class="drawButton">Draw</button>
         </div>
     </div>
 </template>
@@ -134,9 +134,29 @@ export default defineComponent({
 
 
 <style lang="scss" scoped>
+@import "../assets/styles.scss";
+
 .mainContainer{
-    .drawBtn{
+    .leftButton{
+        @extend %btn;
+            &:hover{
+                @extend %btnhover;
+            }
+    }
+    .rightButton{
+        @extend %btn;
+            &:hover{
+                @extend %btnhover;
+            }
+    }
+    .drawButtonContainer{
     text-align: center;
+        .drawButton{
+            @extend %btn;
+            &:hover{
+                @extend %btnhover;
+            }
+        }
     }
     .img{
     border: 5px solid #282828;
