@@ -41,6 +41,9 @@ export default{
   .homeButton{
     @extend %btn;
     margin-top: 20px;
+    &:hover{
+      @extend %btnhover;
+    }
   }
 }
 

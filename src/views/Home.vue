@@ -87,6 +87,7 @@ export default defineComponent({
         width: $subContainerWidth;
         overflow-x: hidden;
         overflow-y: scroll;
+        scrollbar-width: none;
         .item_1{
             text-align: center;
             margin-top: 5px;
