@@ -139,14 +139,23 @@ export default defineComponent({
 .mainContainer{
     .leftButton{
         @extend %btn;
+            &:hover{
+                @extend %btnhover;
+            }
     }
     .rightButton{
         @extend %btn;
+            &:hover{
+                @extend %btnhover;
+            }
     }
     .drawButtonContainer{
     text-align: center;
         .drawButton{
             @extend %btn;
+            &:hover{
+                @extend %btnhover;
+            }
         }
     }
     .img{

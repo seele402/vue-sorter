@@ -146,6 +146,9 @@ export default defineComponent({
                     cursor: pointer;
                     height: 15px;
                     width: 15px;
+                    &:hover{
+                        @extend %btnhover;
+                    }
                 }
             }
             .tableBodyImg::-webkit-scrollbar 
@@ -157,6 +160,9 @@ export default defineComponent({
                 width: 100px;
                 padding: 5px;
                 font-size: 11pt;
+                &:hover{
+                    @extend %btnhover;
+                }
             }
         }
         
