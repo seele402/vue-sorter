@@ -13,7 +13,7 @@
                  </thead>
                 <tbody>
                     <tr align="left" v-for="(contestant, key) in contestants" :key="key">
-                        <td align="center" class="tableBodyId">{{key}}</td>
+                        <td align="center" class="tableBodyId">{{key+1}}</td>
                         <td class="tableBodyName">
                             <input class="inputName" v-model="contestant.name"/>
                         </td>
@@ -30,9 +30,7 @@
                     </tr>
                 </tbody>
             </table>
-            <button class="startButton" @click="$router.push({ name: 'battlePage' })"> Start </button>
-            <!-- <router-link :to="{name: 'battlePage' }" class="startButton">Start</router-link> -->
-            
+            <button class="startButton" @click="$router.push({ name: 'battlePage' })"> Start </button>     
         </div>
     </div>
 
@@ -104,6 +102,7 @@ export default defineComponent({
             overflow-x: hidden;
             margin: auto;
             border: none;
+            margin-left: 4px;
             .tableHeaderId{
                 @extend %table-body;
                 width: $subContainerWidth * (1/8);
@@ -143,7 +142,6 @@ export default defineComponent({
                 border: none;
                 padding-left: 3px;
                 .deleteButton{
-                    // background: url(https://w7.pngwing.com/pngs/124/277/png-transparent-delete-cross-black-crash-cancel-no-remove-prohibited-ban.png);
                     border: none;
                     cursor: pointer;
                     height: 15px;
@@ -159,12 +157,6 @@ export default defineComponent({
                 width: 100px;
                 padding: 5px;
                 font-size: 11pt;
-                // background-color: inherit;
-                // border: none;
-                // display: inline-block;
-                // cursor: pointer;
-                // font-size: medium;
-                // @extend %table-border;
             }
         }
         
