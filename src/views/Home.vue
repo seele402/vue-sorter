@@ -22,9 +22,7 @@
                             <input class="inputImg" v-model="contestant.img"/>
                         </td>
                         <td class="tableBodyButtons">
-                            <!-- <button class="deleteButton" @click="deleteContestant(key)"> -->
                                 <img class="deleteButton" src="https://cdn-icons-png.flaticon.com/512/1345/1345874.png" alt="" @click="deleteContestant(key)">
-                            <!-- </button> -->
                         </td>
                     </tr>
                     <tr>
@@ -32,7 +30,7 @@
                     </tr>
                 </tbody>
             </table>
-            <button class="startButton"> Start </button>
+            <button class="startButton" @click="$router.push({ name: 'battlePage' })"> Start </button>
             <!-- <router-link :to="{name: 'battlePage' }" class="startButton">Start</router-link> -->
             
         </div>

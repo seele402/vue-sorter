@@ -22,6 +22,7 @@ export default{
 </script>
 
 <style scoped>
+@import "../assets/styles.scss";
 .resultsContainer{
   display: table;
   margin: 0 auto;
