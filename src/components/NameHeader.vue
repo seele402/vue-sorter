@@ -8,7 +8,7 @@
   })
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .logo{
   color: #8B8C7A;
   font-weight: bold;

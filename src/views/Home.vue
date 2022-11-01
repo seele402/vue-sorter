@@ -53,7 +53,7 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 %table-border{
     border: solid;
     border-color: $tblborder;
