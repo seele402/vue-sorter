@@ -1,4 +1,5 @@
 import { defineStore } from "pinia";
+import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 
 export const useContestantsStore = defineStore(
     'contestants', 
@@ -18,6 +19,7 @@ export const useContestantsStore = defineStore(
         nImg: "",
         i: 0,
     }),
+    persist: true,
     getters:  { 
         results: (state) => {
             const contestants = state.contestants.slice();
