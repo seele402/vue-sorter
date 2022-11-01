@@ -18,10 +18,13 @@
                             <input class="inputName" v-model="contestant.name"/>
                         </td>
                         <td class="tableBodyImg">
+                            <img class="previewImg" v-bind:src="contestant.img"/>
                             <input class="inputImg" v-model="contestant.img"/>
                         </td>
                         <td class="tableBodyButtons">
-                            <button class="deleteButton" @click="deleteContestant(key)"><img/></button>
+                            <!-- <button class="deleteButton" @click="deleteContestant(key)"> -->
+                                <img class="deleteButton" src="https://cdn-icons-png.flaticon.com/512/1345/1345874.png" alt="" @click="deleteContestant(key)">
+                            <!-- </button> -->
                         </td>
                     </tr>
                     <tr>
@@ -29,7 +32,8 @@
                     </tr>
                 </tbody>
             </table>
-            <router-link :to="{name: 'battlePage' }" class="startButton">Start</router-link>
+            <button class="startButton"> Start </button>
+            <!-- <router-link :to="{name: 'battlePage' }" class="startButton">Start</router-link> -->
             
         </div>
     </div>
@@ -54,9 +58,11 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+@import "../assets/styles.scss";
+
 %table-border{
     border: solid;
-    border-color: $tblborder;
+    border-color: #181818;
 }
 %table-body{
     @extend %table-border;
@@ -77,6 +83,8 @@ export default defineComponent({
     overflow-y: hidden;
     height: 60vh;
     .subContainer{
+        display: flex;
+        flex-flow: column nowrap;
         background-color: #282828;
         border: solid;
         border-color: #252525;
@@ -96,6 +104,8 @@ export default defineComponent({
             table-layout: fixed;
             max-height: 60vh;
             overflow-x: hidden;
+            margin: auto;
+            border: none;
             .tableHeaderId{
                 @extend %table-body;
                 width: $subContainerWidth * (1/8);
@@ -121,15 +131,25 @@ export default defineComponent({
             .tableBodyImg{
                 @extend %table-body;
                 overflow-x: scroll;
+                white-space: nowrap;
+                .previewImg{
+                    width: 20px;
+                    height: 20px;
+                }
                 .inputImg{
-                    width: $subContainerWidth * (1/1.8);
-                    @extend %input-base
+                    width: $subContainerWidth * (1/1.9);
+                    @extend %input-base;
                 }
             }
             .tableBodyButtons{
                 border: none;
+                padding-left: 3px;
                 .deleteButton{
-                    background: "https://w7.pngwing.com/pngs/124/277/png-transparent-delete-cross-black-crash-cancel-no-remove-prohibited-ban.png";
+                    // background: url(https://w7.pngwing.com/pngs/124/277/png-transparent-delete-cross-black-crash-cancel-no-remove-prohibited-ban.png);
+                    border: none;
+                    cursor: pointer;
+                    height: 15px;
+                    width: 15px;
                 }
             }
             .tableBodyImg::-webkit-scrollbar 
@@ -137,19 +157,25 @@ export default defineComponent({
                 display: none;
             }
             .AddButton{
-                background-color: inherit;
-                border: none;
-                display: inline-block;
-                cursor: pointer;
-                font-size: medium;
-                @extend %table-border;
+                @extend %btn;
+                width: 100px;
+                padding: 5px;
+                font-size: 11pt;
+                // background-color: inherit;
+                // border: none;
+                // display: inline-block;
+                // cursor: pointer;
+                // font-size: medium;
+                // @extend %table-border;
             }
         }
         
         .startButton{
-                text-align: center;
-                text-decoration: none;
-                margin-top: 30px;
+            @extend %btn;
+            align-self: center;
+            &:hover{
+                @extend %btnhover;
+            }
         }
     }
     .subContainer::-webkit-scrollbar 
